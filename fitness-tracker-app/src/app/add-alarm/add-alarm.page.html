@@ -1,0 +1,73 @@
+<ion-header class="activity-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <img src="assets/images/Back-Navs.svg" alt="Back" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="profile-title">Add Alarm</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <img src="assets/images/Detail-Navs.svg" alt="Options" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="sleep-settings">
+
+  <!-- Bedtime -->
+  <div class="setting-card">
+    <div class="left">
+      <img src="assets/images/Icon-Bed.svg" alt="Bedtime Icon" />
+      <span class="label">Bedtime</span>
+    </div>
+    <div class="right">
+      <span class="value">09:00 PM</span>
+      <img src="assets/images/Icon-ArrowNEXT.svg" alt="Next Icon" />
+    </div>
+  </div>
+
+  <!-- Hours of Sleep -->
+  <div class="setting-card">
+    <div class="left">
+      <img src="assets/images/Icon-Time.svg" alt="Clock Icon" />
+      <span class="label">Hours of sleep</span>
+    </div>
+    <div class="right">
+      <span class="value">8hours 30minutes</span>
+      <img src="assets/images/Icon-ArrowNEXT.svg" alt="Next Icon" />
+    </div>
+  </div>
+
+  <!-- Repeat -->
+  <div class="setting-card">
+    <div class="left">
+      <img src="assets/images/Icon-Repeat.svg" alt="Repeat Icon" />
+      <span class="label">Repeat</span>
+    </div>
+    <div class="right">
+      <span class="value">Mon to Fri</span>
+      <img src="assets/images/Icon-ArrowNEXT.svg" alt="Next Icon" />
+    </div>
+  </div>
+
+  <!-- Vibrate Toggle -->
+  <div class="setting-card">
+    <div class="left">
+      <img src="assets/images/Icon-Vibrate.svg" alt="Vibrate Icon" />
+      <span class="label">Vibrate When Alarm Sound</span>
+    </div>
+    <ion-toggle checked></ion-toggle>
+  </div>
+
+  </div>
+
+  <div class="bottom-button">
+    <ion-button expand="block" class="round-gradient-btn" >Add</ion-button>
+  </div>
+
+</ion-content>

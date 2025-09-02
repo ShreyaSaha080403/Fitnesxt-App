@@ -1,0 +1,190 @@
+<ion-header class="activity-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="backDash()">
+        <img src="assets/images/Back-Navs.svg" alt="Back" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="profile-title">Workout Tracker</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <img src="assets/images/Detail-Navs.svg" alt="Options" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="workout-bg" >
+
+
+  <!-- <ion-modal
+    [isOpen]="true"
+    [presentingElement]="presentingEl"
+    class="sheet-modal"
+    handleBehavior="cycle"
+    [initialBreakpoint]="0.75"
+    [breakpoints]="[0, 0.5, 0.75, 1]"
+    canDismiss="false"
+  >
+    <ng-template>
+      <ion-content class="inner-sheet">
+       
+        <div class="sheet-content">
+
+
+          <div class="target-card">
+  <div class="target-content">
+    <h2 class="target-title">Daily Workout Schedule</h2>
+  </div>
+  <button class="check-btn">Check</button>
+          </div>
+
+          <div class="latest-activity">
+         <div class="title">Upcomming Workout</div>
+          <div class="side">See more</div>
+         </div>
+
+          <ion-card class="schedule-card">
+  <div class="card-content">
+    
+    <img src="assets/images/WorkoutFull.svg" class="card-icon" />
+
+   
+    <div class="card-text">
+      <div class="card-title">FullBody Workout</div>
+      <div class="card-subtitle">Today, 03:00 pm</div>
+    </div>
+  
+    <div class="card-options">
+      <ion-toggle color="primary" checked></ion-toggle>
+    </div>
+  </div>
+          </ion-card>
+
+          <ion-card class="schedule-card">
+  <div class="card-content">
+  
+    <img src="assets/images/WorkoutUper.svg" class="card-icon" />
+
+  
+    <div class="card-text">
+      <div class="card-title">UpperBody Workout</div>
+      <div class="card-subtitle">June 05, 02:00 pm</div>
+    </div>
+   
+    <div class="card-options">
+      <ion-toggle color="primary" ></ion-toggle>
+    </div>
+  </div>
+         </ion-card>
+           
+           <div class="findsmth-activity">
+   <div class="title">What Do You Want to Train</div>
+</div>
+
+
+
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal> -->
+
+  <div class="graph-section">
+  <canvas id="workoutChart"></canvas>
+</div>
+
+
+<div class="sheet-like-container">
+  <!-- All the content from inside <ion-content class="inner-sheet"> -->
+  <div class="sheet-content">
+
+    <div class="target-card">
+      <div class="target-content">
+      <h2 class="target-title">Daily Workout Schedule</h2>
+     </div>
+      <button class="check-btn" (click)="goWorkoutschedule()">Check</button>
+      </div>
+    
+    <ion-card class="schedule-card">
+  <div class="card-content">
+    
+    <img src="assets/images/WorkoutFull.svg" class="card-icon" />
+
+   
+    <div class="card-text">
+      <div class="card-title">FullBody Workout</div>
+      <div class="card-subtitle">Today, 03:00 pm</div>
+    </div>
+  
+    <div class="card-options">
+      <ion-toggle color="primary" checked></ion-toggle>
+    </div>
+  </div>
+          </ion-card>
+
+    <ion-card class="schedule-card">
+             <div class="card-content">
+  
+              <img src="assets/images/WorkoutUper.svg" class="card-icon" />
+
+  
+                <div class="card-text">
+                      <div class="card-title">UpperBody Workout</div>
+                      <div class="card-subtitle">June 05, 02:00 pm</div>
+                 </div>
+   
+               <div class="card-options">
+                <ion-toggle color="primary" ></ion-toggle>
+                </div>
+                </div>
+         </ion-card>
+           
+    <div class="findsmth-activity">
+   <div class="title">What Do You Want to Train</div>
+    </div>
+    
+     <ion-card class="workout-card">
+      <ion-card-content class="workout-card-content">
+         <div class="workout-info">
+         <h3>Fullbody Workout</h3>
+         <p>11 Exercises | 32 mins</p>
+         <ion-button fill="outline" size="small" class="view-more-btn" (click)="fullbodWork()">View more</ion-button>
+        </div>
+        <img src="assets/images/Fullbody.svg" alt="Fullbody workout" class="workout-image" />
+        </ion-card-content>
+    </ion-card>
+     <ion-card class="workout-card">
+      <ion-card-content class="workout-card-content">
+         <div class="workout-info">
+         <h3>Lowerbody Workout</h3>
+         <p>12 Exercises | 40 mins</p>
+         <ion-button fill="outline" size="small" class="view-more-btn">View more</ion-button>
+        </div>
+        <img src="assets/images/lowerbody.svg" alt="Fullbody workout" class="workout-image" />
+        </ion-card-content>
+    </ion-card>
+      <ion-card class="workout-card">
+      <ion-card-content class="workout-card-content">
+         <div class="workout-info">
+         <h3>Ab Workout</h3>
+         <p>14 Exercises | 20 mins</p>
+         <ion-button fill="outline" size="small" class="view-more-btn">View more</ion-button>
+        </div>
+        <img src="assets/images/ab.svg" alt="Fullbody workout" class="workout-image" />
+        </ion-card-content>
+
+
+    </ion-card>
+
+
+
+
+
+  </div>
+
+</div>
+
+
+</ion-content>

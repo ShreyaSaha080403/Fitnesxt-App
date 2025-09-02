@@ -1,0 +1,66 @@
+<ion-header class="profile-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear">
+        <img src="assets/images/Back-Navs.svg" alt="Back" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="profile-title">Breakfast</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <img src="assets/images/Detail-Navs.svg" alt="Options" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-content class="home-page">
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <img src="assets/icon/light/Search.svg" alt="search" />
+    <input type="text" placeholder="Search Pancake" />
+    <img src="assets/icon/light/Filter.svg" alt="filter" />
+  </div>
+
+  <!-- Category Heading -->
+  <h2 class="section-heading">Category</h2>
+
+  <!-- Category Scroll -->
+  <div class="category-scroll">
+    <div class="category-item" *ngFor="let item of categories">
+      <img [src]="item.icon" alt="{{item.name}}" />
+      <span>{{ item.name }}</span>
+    </div>
+  </div>
+
+  <!-- Recommendation Section -->
+  <h2 class="section-heading">Recommendation<br />for Diet</h2>
+
+  <div class="recommend-scroll">
+    <div class="recommend-card" *ngFor="let meal of recommended">
+      <img [src]="meal.image" alt="{{meal.title}}" />
+      <h3>{{ meal.title }}</h3>
+      <p>{{ meal.desc }}</p>
+      <button>View</button>
+    </div>
+  </div>
+
+  <!-- Popular Section -->
+  <h2 class="section-heading">Popular</h2>
+
+  <div class="popular-card">
+    <img src="assets/images/pancake 2.svg" alt="Blueberry Pancake" />
+    <div class="popular-text">
+      <h3>Blueberry Pancake</h3>
+      <p>Medium | 30mins | 230kCal</p>
+    </div>
+    <img src="assets/images/Icon-nextt.svg" alt="arrow" class="arrow" />
+  </div>
+
+</ion-content>
+
+</ion-content>

@@ -1,0 +1,62 @@
+
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="illustration-container">
+    <img src="assets/images/reg11.png" alt="Profile Setup" />
+  </div>
+
+  <!-- Heading and Subtitle -->
+  <div class="text-center mb-2rem">
+    <h1 class="h1">Let’s complete your profile</h1>
+    <p class="subtitle">It will help us to know more about you!</p>
+  </div>
+
+  <!-- Gender Selection -->
+  <ion-item lines="none" class="input-field">
+    <ion-icon name="accessibility-outline" slot="start"></ion-icon>
+    <ion-select placeholder="Choose Gender" interface="action-sheet">
+      <ion-select-option value="male">Male</ion-select-option>
+      <ion-select-option value="female">Female</ion-select-option>
+      <ion-select-option value="other">Other</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Date of Birth Toggle + Calendar -->
+  <div class="input-field calendar-toggle" (click)="toggleDatePicker()">
+    <ion-icon name="calendar-clear-outline"></ion-icon>
+    <span class="placeholder-text">
+      {{ dob ? (dob | date: 'longDate') : 'Date of Birth' }}
+    </span>
+  </div>
+
+  <!-- Calendar -->
+  <ion-datetime
+    *ngIf="showDatePicker"
+    presentation="date"
+    [(ngModel)]="dob"
+    (ionChange)="onDateSelected()"
+    class="custom-calendar"
+  ></ion-datetime>
+
+  <!-- Weight with KG Tag -->
+  <div class="input-with-unit">
+    <ion-icon name="heart-outline" slot="start"></ion-icon>
+    <ion-input placeholder="Your Weight" type="number"></ion-input>
+    <div class="unit-tag purple">KG</div>
+  </div>
+
+  <!-- Height with CM Tag -->
+  <div class="input-with-unit">
+    <ion-icon name="resize-outline" slot="start"></ion-icon>
+    <ion-input placeholder="Your Height" type="number"></ion-input>
+    <div class="unit-tag pink">CM</div>
+  </div>
+
+  <!-- Next Button -->
+  <div class="ion-padding-top">
+    <ion-button expand="block" class="round-gradient-btn" shape="round" (click)="next()">
+      Next
+      <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+    </ion-button>
+  </div>
+</ion-content>

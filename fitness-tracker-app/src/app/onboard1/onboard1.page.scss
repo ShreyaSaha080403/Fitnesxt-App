@@ -1,0 +1,40 @@
+@import 'src/theme/variables' ;
+.onboarding-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  font-family: $font-family-base;
+  background: $color-white;
+  padding: 0 1.5rem;
+
+}
+
+.center-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40vh;
+
+  .highlight {
+    color: #ab9cf3;
+    font-size: 50px;
+
+  }
+  .subtitle{
+    //padding-bottom: 310px;
+    line-height: 2px;
+  }
+}
+
+.bottom-button {
+  padding: 2rem 0;
+  position: fixed;
+  bottom: 0px;  // Adjust distance from bottom
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;  // Control width (or use `max-width`)
+  z-index: 100;
+}

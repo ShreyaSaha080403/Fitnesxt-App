@@ -1,0 +1,186 @@
+.activity-header {
+  --background: transparent; // remove gray background from ion-header
+  //box-shadow: none;          // removes any box-shadow if it exists
+  background: #fff;
+  //box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+  padding: 40px 00px 0 0px;
+    font-family: 'Poppins', sans-serif;
+    --overflow: visible;
+  overflow: visible;
+
+  ion-toolbar {
+    --background: transparent;   // removes toolbar background
+    --ion-color-base: transparent;
+    --min-height: 60px;
+    --padding-start: 0;
+    --padding-end: 0;
+    --border-width: 0;         
+    box-shadow: none;           
+     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px 0;
+
+    ion-title.profile-title {
+      position: absolute;  // 🔑 center regardless of side buttons
+      left: 0;
+      right: 0;
+        font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      color: #000;
+      flex: 1;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+    }
+
+    .icon-btn {
+      width: 31px;
+      height: 31px;
+    }
+
+    ion-button {
+      padding: 0 20px;
+      margin: 0;
+      min-width: auto;
+      height: auto;
+    }
+  }
+}
+
+.schedule-wrapper {
+  padding: 20px;
+  position: relative;
+  background: #fff;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.date-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  color: #888;
+  margin-bottom: 16px;
+
+  ion-icon {
+    font-size: 20px;
+    color: #999;
+  }
+
+  .month {
+    font-size: 16px;
+  }
+}
+
+.day-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  .day {
+    background: #f5f5f5;
+    padding: 10px;
+    width: 66px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: #aaa;
+
+    span {
+      font-size: 16px;
+      font-weight: 600;
+      display: block;
+      margin-top: 4px;
+    }
+  }
+
+  .day.active {
+    background: linear-gradient(90deg, #9DCEFF 0%, #92A3FD 100%);
+    color: white;
+  }
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .hour-slot {
+    position: relative;
+    font-size: 14px;
+    color: #999;
+    padding-left: 16px;
+
+    .event {
+      position: absolute;
+      left: 120px;
+      top: 0;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #fff;
+      white-space: nowrap;
+    }
+
+    .event.purple {
+      background: linear-gradient(90deg, #EEA4CE 0%, #C58BF2 100%);
+    }
+
+    .event.gray {
+      background: #eeeeee;
+      color: #555;
+    }
+  }
+
+  .hour-slot.current-time::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 11px;
+    width: 8px;
+    height: 8px;
+    background: #C58BF2;
+    border-radius: 50%;
+  }
+
+  .hour-slot.current-time::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 15px;
+    width: calc(100% - 30px);
+    height: 1px;
+    background: #C58BF2;
+  }
+}
+
+.floating-add {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #EEA4CE 0%, #C58BF2 100%);
+  border: none;
+  box-shadow: 0 4px 14px rgba(197, 139, 242, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}

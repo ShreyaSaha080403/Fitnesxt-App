@@ -1,0 +1,136 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+.ion-page-hidden [tabindex], 
+.ion-page-hidden button, 
+.ion-page-hidden input, 
+.ion-page-hidden textarea {
+  visibility: hidden !important;
+}
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+//@import "@ionic/angular/css/palettes/dark.system.css";
+
+@import 'theme/variables';
+
+/* global.scss */
+
+
+
+// COMMON ROUND BUTTON
+
+.round-gradient-btn {
+  --border-radius: #{$border-radius-lg};
+  --background: linear-gradient(to left, #{$color-brand-gradient-start}, #{$color-brand-gradient-end});
+  --color: #{$color-white};
+  font-weight: bold;
+  font-family: $font-family-base;
+  width: auto; // or a specific width like 200px
+  min-width: unset; // removes default min-width if any
+  padding-left: 1rem; // adjust as needed
+  padding-right: 1rem; // adjust as needed
+  margin-left: auto; // centers the button
+  margin-right: auto; // centers the button
+  display: block; // n
+  height: 60px;  /* Fixed height (adjust as needed) */
+  min-height: 48px;
+}
+
+
+  
+
+
+
+.circle-button {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(to left, #92A3FD, #9DCEFF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(146, 163, 253, 0.4);
+    cursor: pointer;
+
+    .arrow {
+      font-size: 24px;
+      color: #fff;
+    }
+  }
+
+  // Typography
+.h1-bold {
+  font-size:35px;
+  line-height: $line-height-h1;
+  font-weight: 700;
+  color: $color-primary-dark;
+  font-family: $font-family-base;
+}
+
+.h2-bold {
+  font-size: $font-size-h2;
+  line-height: $line-height-h2;
+  font-weight: 700;
+  color: $color-primary-dark;
+  font-family: $font-family-base;
+}
+
+.subtitle {
+  font-size: 18px;
+  line-height: $line-height-subtitle;
+  font-weight: 400;
+  color: $color-grey-dark;
+  font-family: $font-family-base;
+}
+
+// Layout helpers
+.text-center {
+  text-align: center;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.mb-2rem {
+  margin-bottom: 2rem;
+}
+
+.loginsignupLink{
+  color: #c58bf2;
+  font-weight: 500;
+}

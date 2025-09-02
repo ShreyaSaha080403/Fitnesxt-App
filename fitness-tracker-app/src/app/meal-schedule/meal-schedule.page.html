@@ -1,0 +1,101 @@
+<ion-header class="profile-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <img src="assets/images/Back-Navs.svg" alt="Back" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="profile-title">Meal Schedule</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <img src="assets/images/Detail-Navs.svg" alt="Options" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="calendar-container">
+  <div class="calendar-header">
+    <ion-icon name="chevron-back-outline" (click)="goToPreviousWeek()"></ion-icon>
+    <span>May 2025</span>
+    <ion-icon name="chevron-forward-outline" (click)="goToNextWeek()"></ion-icon>
+  </div>
+
+  <div class="calendar-strip">
+    <div class="day" *ngFor="let day of days" [class.active]="day.active" (click)="selectDay(day)">
+      <div class="day-name">{{ day.name }}</div>
+      <div class="day-number">{{ day.date }}</div>
+    </div>
+  </div>
+</div>
+   
+  
+<div class="meal-section">
+
+
+  <!-- Heading -->
+  <div class="meal-header">
+    <h2>Breakfast</h2>
+    <span>2 meals | 230 calories</span>
+  </div>
+
+  <!-- Meal Items -->
+  <div class="meal-card">
+    <div class="meal-icon">
+      <img src="assets/images/pancakes.svg" alt="Honey Pancake" />
+    </div>
+    <div class="meal-info">
+      <h3>Honey Pancake</h3>
+      <p>07:00am</p>
+    </div>
+    <img src="assets/images/circlenext.svg" alt="arrow" class="arrow-icon" />
+  </div>
+
+  <div class="meal-card">
+    <div class="meal-icon">
+      <img src="assets/images/coffees.svg" alt="Coffee" />
+    </div>
+    <div class="meal-info">
+      <h3>Coffee</h3>
+      <p>07:30am</p>
+    </div>
+    <img src="assets/images/circlenext.svg" alt="arrow" class="arrow-icon" />
+  </div>
+
+  <div class="meal-header">
+    <h2>Lunch</h2>
+    <span>2 meals | 600 calories</span>
+  </div>
+
+  <!-- Meal Items -->
+  <div class="meal-card">
+    <div class="meal-icon">
+      <img src="assets/images/chicken steak.svg" alt="Honey Pancake" />
+    </div>
+    <div class="meal-info">
+      <h3>Chicken Steak</h3>
+      <p>01:00pm</p>
+    </div>
+    <img src="assets/images/circlenext.svg" alt="arrow" class="arrow-icon" />
+  </div>
+
+  <div class="meal-card">
+    <div class="meal-icon">
+      <img src="assets/images/coffees.svg" alt="Coffee" />
+    </div>
+    <div class="meal-info">
+      <h3>Milk</h3>
+      <p>01:30pm</p>
+    </div>
+    <img src="assets/images/circlenext.svg" alt="arrow" class="arrow-icon" />
+  </div>
+
+
+</div>
+
+
+
+</ion-content>

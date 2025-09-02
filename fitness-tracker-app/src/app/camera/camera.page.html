@@ -1,0 +1,74 @@
+<ion-header class="profile-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear">
+        <img src="assets/images/Back-Navs.svg" alt="Back" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="profile-title">Progress Photo</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <img src="assets/images/Detail-Navs.svg" alt="Options" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true"  class="page-content">
+  <ion-card class="reminder-card">
+  <ion-card-content class="reminder-content">
+    <div class="reminder-left">
+      <img src="assets/images/cam1.svg" alt="Reminder Icon" />
+    </div>
+    <div class="reminder-text">
+      <div class="reminder-title">Reminder!</div>
+      <div class="reminder-desc">Next Photos Fall On July 08</div>
+    </div>
+    <div class="reminder-close">
+      <ion-icon name="close-outline"></ion-icon>
+    </div>
+  </ion-card-content>
+</ion-card>
+
+<ion-card class="progress-track-card">
+  <ion-card-content class="progress-track-content">
+    <div class="progress-text">
+      <div class="title">Track Your Progress Each Month With <span class="highlight">Photo</span></div>
+      <button class="learn-more-btn">Learn More</button>
+    </div>
+    <img src="assets/images/cam2.svg" class="progress-img" alt="Progress Illustration" />
+  </ion-card-content>
+</ion-card>
+   
+<div class="target-card">
+  <div class="target-content">
+    <h2 class="target-title">Compare My Photo</h2>
+  </div>
+  <button class="check-btn" >Compare</button>
+</div>
+
+
+ <div class="equipment-section">
+          <div class="section-header">
+           <h3>Gallery</h3>
+          <span class="item-count">See More</span>
+           </div>
+</div>
+
+<div class="date-section" *ngFor="let group of imageGroups" >
+    <h3>{{ group.date }}</h3>
+
+    <div class="image-row">
+      <div class="image-card" *ngFor="let img of group.images">
+        <img [src]="img" alt="Workout Image" />
+      </div>
+    </div>
+  </div>
+
+<div class="floating-photo-btn">
+  <img src="assets/images/cam3.svg" alt="Take Photo" />
+</div>
+ 
+</ion-content>

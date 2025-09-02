@@ -1,0 +1,309 @@
+.activity-header {
+  --background: transparent; // remove gray background from ion-header
+  //box-shadow: none;          // removes any box-shadow if it exists
+  background: #fff;
+  //box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+  padding: 40px 00px 0 0px;
+    font-family: 'Poppins', sans-serif;
+    --overflow: visible;
+  overflow: visible;
+
+  ion-toolbar {
+    --background: transparent;   // removes toolbar background
+    --ion-color-base: transparent;
+    --min-height: 60px;
+    --padding-start: 0;
+    --padding-end: 0;
+    --border-width: 0;         
+    box-shadow: none;           
+     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px 0;
+
+    ion-title.profile-title {
+      position: absolute;  // 🔑 center regardless of side buttons
+      left: 0;
+      right: 0;
+        font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      color: #000;
+      flex: 1;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+    }
+
+    .icon-btn {
+      width: 31px;
+      height: 31px;
+    }
+
+    ion-button {
+      padding: 0 20px;
+      margin: 0;
+      min-width: auto;
+      height: auto;
+    }
+  }
+}
+
+.bmi-card {
+  //background-image: url('/assets/images/Banner.svg');
+  background: #e3eafc;
+  font-family: 'Poppins', sans-serif;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  padding: 20px;
+  height: 162px;
+  margin-left: 30px;
+  margin-right: 30px;
+  position: relative;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .bmi-content {
+  z-index: 2;
+  position: relative;
+  max-width: 65%;
+}
+
+.bmi-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #000;
+}
+
+.bmi-subtext {
+  font-size: 14px;
+  margin-bottom: 14px;
+  color: rgb(225, 140, 226)
+}
+
+.view-more-btn {
+  --background: linear-gradient(90deg, #9DCEFF 0%, #92A3FD 100%);
+  --color: white;
+  font-size: 12px;
+  padding: 0 0px;
+  text-transform: none;
+  --box-shadow: none;
+  border-radius: 999px;
+  height: 39px;
+}
+
+.bmi-piechart {
+  position: absolute;
+  top: 15px;     /* ↓ Adjusted for balance */
+  right: 1px;   /* ← Tucked in better */
+  width: 140px;
+  height:120px;
+  z-index: 1;
+}
+}
+
+.schedule-section {
+  margin-top: 30px;
+
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    margin-left: 30px;
+  }
+
+  .date-scroll-wrapper {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 10px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .date-card {
+    min-width: 70px;
+    padding: 12px 0;
+    background-color: #f5f5f5;
+    border-radius: 14px;
+    text-align: center;
+    flex-shrink: 0;
+    transition: 0.3s;
+
+    .day {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 4px;
+    }
+
+    .date {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    &.selected {
+      background: linear-gradient(180deg, #9DCEFF 0%, #92A3FD 100%);
+      color: #fff;
+
+      .day,
+      .date {
+        color: white;
+      }
+    }
+  }
+}
+
+.schedule-card {
+  border-radius: 20px;
+  padding: 16px;
+  margin-bottom: 14px;
+  margin-left: 30px;
+  margin-right: 30px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.03), 0px -2px 10px rgba(0, 0, 0, 0.02);
+
+  .card-content {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    margin-right: 14px;
+  }
+
+  .card-text {
+    flex: 1;
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 600;
+
+      span {
+        color: #999;
+        font-weight: 500;
+      }
+    }
+
+    .card-subtitle {
+      font-size: 14px;
+      color: #777;
+      margin-top: 4px;
+    }
+  }
+
+  .card-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+
+    .options-icon {
+      width: 20px;
+      height: 20px;
+      margin-bottom: 6px;
+    }
+
+    ion-toggle {
+      zoom: 0.9;
+      --handle-height: 16px;
+    --handle-width: 16px;
+    --toggle-height: 16px;
+    --toggle-width: 44px;
+
+    --background: #ffffff;
+    --background-checked: linear-gradient(90deg, #EEA4CE 0%, #C58BF2 100%);
+
+    &::part(track) {
+      height: 27px !important;
+      width: 50px !important;
+      border-radius: 999px;
+    }
+
+    &[aria-checked="true"]::part(track) {
+      background: var(--background-checked) !important;
+    }
+
+    &::part(handle) {
+      width: 15px;
+      height: 15px;
+      background: #fff !important;
+    }
+    }
+  }
+}
+
+.sleep-card {
+  background: #f7e6f4;
+  border-radius: 24px;
+  padding: 20px;
+  position: relative;
+  margin: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  .sleep-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.5;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  .progress-bar-container {
+    background-color: #fff;
+    height: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 18px;
+  }
+
+  .progress-bar {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #EEA4CE 0%, #C58BF2 100%);
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    line-height: 12px;
+    font-weight: 600;
+  }
+
+  .floating-add-btn {
+    position: absolute;
+    bottom: -20px;
+    right: -10px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(90deg, #EEA4CE 0%, #C58BF2 100%);
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 4px 12px rgba(197, 139, 242, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+

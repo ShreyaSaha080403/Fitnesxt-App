@@ -1,0 +1,26 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>onboard4</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true" class="onboarding-content">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">onboard4</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+  <div class="image-container">
+    <img src="assets/images/onb3.png" alt="Burn Image" />
+  </div>
+  <div class="text-container">
+    <h2 class="title">Eat Well</h2>
+    <p class="subtitle">
+      Let's start a healthy lifestyle with us, we can determine your diet every day. healthy eating is fun
+    </p>
+  </div>
+  <div class="circle-button" (click)="goNext()">
+    <ion-icon name="arrow-forward-outline" class="arrow"></ion-icon>
+  </div>
+</ion-content>

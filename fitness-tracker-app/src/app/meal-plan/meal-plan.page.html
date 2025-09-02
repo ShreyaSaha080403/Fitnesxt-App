@@ -1,0 +1,85 @@
+<ion-header class="activity-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="backDash()">
+        <img src="assets/images/Back-Navs.svg" alt="Back" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="profile-title">Meal Planner</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <img src="assets/images/Detail-Navs.svg" alt="Options" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+
+  <div class="meal-nutritions-header">
+  <div class="title">Meal Nutritions</div>
+  <ion-select interface="popover" placeholder="Weekly" value="weekly">
+    <ion-select-option value="daily">Daily</ion-select-option>
+    <ion-select-option value="weekly">Weekly</ion-select-option>
+  </ion-select>
+</div>
+  <div class="meal-graph-card">
+  <ion-card-content>
+    <canvas id="mealChart"></canvas>
+  </ion-card-content>
+</div>
+<div class="target-card">
+  <div class="target-content">
+    <h2 class="target-title">Daily Meal Schedule</h2>
+  </div>
+  <button class="check-btn" (click)="mealschedule()">Check</button>
+</div>
+
+  <div class="todaymeal-header">
+  <div class="title">Today Meals</div>
+  <ion-select interface="popover" placeholder="BreakFast" value="Breakfast">
+    <ion-select-option value="Breakfast">Breakfast</ion-select-option>
+    <ion-select-option value="Lunch">Lunch</ion-select-option>
+    <ion-select-option value="Dinner">Dinner</ion-select-option>
+  </ion-select>
+</div>
+
+<ion-card class="meal-card">
+  <div class="meal-card-content">
+    <img src="assets/images/sushi.svg" class="meal-icon" />
+    <div class="meal-info">
+      <h3>Salmon Nigiri</h3>
+      <p>Today | 7am</p>
+    </div>
+    <img src="assets/images/Reminders.svg" class="notif-icon" />
+  </div>
+</ion-card>
+<ion-card class="meal-card">
+  <div class="meal-card-content">
+    <img src="assets/images/glass-of-milk 1.svg" class="meal-icon" />
+    <div class="meal-info">
+      <h3>Lowfat Milk</h3>
+      <p>Today | 8am</p>
+    </div>
+    <img src="assets/images/RemindersOff.svg" class="notif-icon" />
+  </div>
+</ion-card>
+
+<div class="findsmth-activity">
+   <div class="title">Find Something To Eat</div>
+</div>
+
+<div class="food-scroll-container">
+  <div class="food-card" *ngFor="let item of foodOptions" [ngStyle]="{ 'background-color': item.bgColor }">
+    <img [src]="item.image" class="food-image" />
+    <h3>{{ item.title }}</h3>
+    <p>{{ item.subtitle }}</p>
+    <button class="select-button">Select</button>
+  </div>
+</div>
+
+
+</ion-content>

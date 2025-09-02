@@ -1,0 +1,104 @@
+.header-text {
+    padding-top: 20px;
+    text-align: center;
+    margin-top: 40px;
+
+    h3 {
+      font-weight: 400;
+      font-family: 'Poppins', sans-serif;
+      color: #000;
+      margin-bottom: 5px;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+    }
+  }
+
+  form{
+    //padding: 20px;
+    padding: 40px 30px 0 30px;
+    .input-field {
+      --background: #F7F8F8;
+  --border-radius: 12px;
+  --padding-start: 16px;
+  margin-bottom: 16px;
+  --inner-padding-end: 16px;
+  font-family: 'Poppins', sans-serif;
+
+  ion-icon {
+    color: #7B6F72;
+  }
+
+  ion-input {
+    color: #7B6F72;
+  }
+    }
+
+    .policy-checkbox {
+      font-size: 13px;
+      color: #7B6F72;
+      --padding-start: 0;
+      margin-bottom: 110px;
+
+      ion-label a {
+        color: #7B6F72;
+        text-decoration: underline;
+        margin-left: 2px;
+      }
+      
+    }
+
+  }
+
+   .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    margin-top: 0.5px;
+
+    .line {
+      height: 1px;
+      background: #ccc;
+      flex: 1;
+    }
+
+    .or {
+      padding: 0px 30px 0 30px;
+      margin: 0 0px;
+      color: #888;
+      font-family: 'Poppins', sans-serif;
+    }
+  }
+
+  .social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 0px;
+
+    img {
+      width: 70px;
+      height: 70px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px;
+      //box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+  }
+
+  .bottom-login {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin-top: 0px;
+
+    a {
+      
+      text-decoration: none;
+      margin-left: 5px;
+    }
+  }

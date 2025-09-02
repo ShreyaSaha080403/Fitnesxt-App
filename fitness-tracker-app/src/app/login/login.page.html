@@ -1,0 +1,55 @@
+
+
+<ion-content [fullscreen]="true">
+ <div class="text-center mb-2rem">
+    <p class="subtitle" style="padding-top: 70px;">Hey there,</p>
+    <h1 class="h1-bold" style="padding-top: 0.1px;">Welcome Back</h1>
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <ion-item lines="none" class="input-item">
+      <ion-icon name="mail-outline" slot="start" class="input-icon"></ion-icon>
+      <ion-input placeholder="Email" type="email" formControlName="email"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="input-item">
+      <ion-icon name="lock-closed-outline" slot="start" class="input-icon"></ion-icon>
+      <ion-input
+        placeholder="Password"
+        [type]="showPassword ? 'text' : 'password'"
+        formControlName="password">
+      </ion-input>
+      <ion-icon
+        [name]="showPassword ? 'eye-outline' : 'eye-off-outline'"
+        slot="end"
+        class="input-icon clickable"
+        (click)="togglePassword()">
+      </ion-icon>
+    </ion-item>
+
+    <div class="text-center">
+      <a class="forgot-link" href="#">Forgot your password?</a>
+    </div>
+
+    <div class="mt-auto loww">
+      <ion-button expand="block" class="round-gradient-btn mt-2rem" type="submit">Login</ion-button>
+    </div>
+  </form>
+
+  <div class="divider">
+    <span>Or</span>
+  </div>
+
+  <div class="social-login-buttons">
+    <ion-button fill="clear" class="social-btn" (click)="loginWithGoogle()">
+      <img src="assets/images/ggle.png" alt="Google" />
+    </ion-button>
+    <ion-button fill="clear" class="social-btn">
+      <img src="assets/images/fb.png" alt="Facebook" />
+    </ion-button>
+  </div>
+
+  <div class="text-center mt-2rem">
+    <span>Don’t have an account yet? <a class="loginsignupLink" href="register">Register</a></span>
+  </div>
+</ion-content>

@@ -1,0 +1,94 @@
+<ion-header class="activity-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="backDash()">
+        <img src="assets/images/Back-Navs.svg" alt="Back" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="profile-title">Sleep Tracker</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <img src="assets/images/Detail-Navs.svg" alt="Options" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+
+  <div class="wave-graph-card">
+  <ion-card-content>
+    <canvas id="lineChartt"></canvas>
+  </ion-card-content>
+</div>
+  
+  <ion-card class="sleep-card">
+  <div class="sleep-card-content">
+    <div class="sleep-title">Last Night Sleep</div>
+    <div class="sleep-duration">{{ lastNightSleep }}</div>
+    <img src="assets/images/whiteline.svg" class="sleep-wave" />
+  </div>
+</ion-card>
+
+
+<div class="target-card">
+  <div class="target-content">
+    <h2 class="target-title">Daily Sleep Schedule</h2>
+  </div>
+  <button class="check-btn" (click)="goSchedule()">Check</button>
+</div>
+
+<div class="findsmth-activity">
+   <div class="title">Today Schedule</div>
+</div>
+
+
+
+<ion-card class="schedule-card">
+  <div class="card-content">
+    <!-- Left Icon -->
+    <img src="assets/images/bed.svg" class="card-icon" />
+
+    <!-- Text Info -->
+    <div class="card-text">
+     <div class="card-title">Bedtime, <span>{{ bedtime }}</span></div>
+    <div class="card-subtitle">{{ bedtimeCountdown }}</div>
+    </div>
+
+    <!-- Right Options -->
+    <div class="card-options">
+      <img src="assets/images/Moreee.svg" class="options-icon" />
+      <ion-toggle color="primary" checked></ion-toggle>
+    </div>
+  </div>
+</ion-card>
+
+<ion-card class="schedule-card">
+  <div class="card-content">
+    <!-- Left Icon -->
+    <img src="assets/images/Alaarm.svg" class="card-icon" />
+
+    <!-- Text Info -->
+    <div class="card-text">
+      <div class="card-title">Alarm, <span>{{ alarm }}</span></div>
+      <div class="card-subtitle">{{ alarmCountdown }}</div>
+    </div>
+
+    <!-- Right Options -->
+    <div class="card-options">
+      <img src="assets/images/Moreee.svg" class="options-icon" />
+      <ion-toggle color="primary"></ion-toggle>
+    </div>
+  </div>
+</ion-card>
+
+
+
+
+
+
+
+</ion-content>

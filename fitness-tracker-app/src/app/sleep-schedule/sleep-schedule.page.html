@@ -1,0 +1,107 @@
+<ion-header class="activity-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <img src="assets/images/Back-Navs.svg" alt="Back" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="profile-title">Sleep Schedule</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <img src="assets/images/Detail-Navs.svg" alt="Options" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true">
+
+  <ion-card class="bmi-card">
+  <div class="bmi-content">
+    <h2 class="bmi-title">Ideal Hours for Sleep</h2>
+    <p class="bmi-subtext">8hours  30minutes</p>
+    <ion-button class="view-more-btn" size="small" shape="round">Learn More</ion-button>
+  </div>
+  <img src="assets/images/sleepsche.svg" class="bmi-piechart" />
+  </ion-card>
+
+  <div class="schedule-section">
+  <h3 class="section-title">Your Schedule</h3>
+
+  <div class="date-scroll-wrapper">
+    <div
+      class="date-card"
+      *ngFor="let day of weekSchedule"
+      [class.selected]="day.selected"
+      (click)="selectDate(day)"
+    >
+      <p class="day">{{ day.day }}</p>
+      <p class="date">{{ day.date }}</p>
+    </div>
+  </div>
+  </div>
+
+  <ion-card class="schedule-card">
+  <div class="card-content">
+    <!-- Left Icon -->
+    <img src="assets/images/bed.svg" class="card-icon" />
+
+    <!-- Text Info -->
+    <div class="card-text">
+      <div class="card-title">Bedtime, <span>09:00pm</span></div>
+      <div class="card-subtitle">in 6 hours 22 minutes</div>
+    </div>
+
+    <!-- Right Options -->
+    <div class="card-options">
+      <img src="assets/images/Moreee.svg" class="options-icon" />
+      <ion-toggle color="primary" checked></ion-toggle>
+    </div>
+  </div>
+  </ion-card>
+
+  <ion-card class="schedule-card">
+  <div class="card-content">
+    <!-- Left Icon -->
+    <img src="assets/images/Alaarm.svg" class="card-icon" />
+
+    <!-- Text Info -->
+    <div class="card-text">
+      <div class="card-title">Alarm, <span>05:10am</span></div>
+      <div class="card-subtitle">in 14 hours 30 minutes</div>
+    </div>
+
+    <!-- Right Options -->
+    <div class="card-options">
+      <img src="assets/images/Moreee.svg" class="options-icon" />
+      <ion-toggle color="primary"></ion-toggle>
+    </div>
+  </div>
+  </ion-card>
+
+   <div class="sleep-card">
+  <p class="sleep-text">
+    You will get <strong>8</strong>hours <strong>10</strong>minutes <br />for tonight
+  </p>
+
+  <div class="progress-bar-container">
+    <div class="progress-bar" [style.width.%]="sleepPercentage">
+      {{ sleepPercentage }}%
+    </div>
+  </div>
+
+  <button class="floating-add-btn" (click)="add()">
+    <img src="assets/images/AddddBold.svg" alt="Add" />
+  </button>
+   </div>
+
+
+
+ 
+
+
+</ion-content>

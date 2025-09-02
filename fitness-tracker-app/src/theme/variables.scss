@@ -1,0 +1,50 @@
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+// =======================
+// Colors
+// =======================
+
+$color-brand-gradient-start: #92A3FD;
+$color-brand-gradient-end: #9DCEFF;
+
+$color-secondary-gradient-start: #C58BF2;
+$color-secondary-gradient-end: #EEA4CE;
+
+$color-primary-dark: #1D1617;
+$color-grey-dark: #7B6F72;
+$color-grey: #ADA4A5;
+$color-grey-light: #DDDADA;
+$color-border: #F7F8F8;
+$color-white: #FFFFFF;
+
+
+// =======================
+// Font Family
+// =======================
+
+$font-family-base: 'Poppins', sans-serif;
+$font-size-h1: 32px;
+$line-height-h1: 40px;
+$font-size-subtitle: 18px;
+$line-height-subtitle: 24px;
+
+// =======================
+// Font Sizes & Line Heights
+// =======================
+
+$font-size-h1: 26px;
+$line-height-h1: calc($font-size-h1 * 1.5); // 39px
+
+$font-size-h2: 24px;
+$line-height-h2: calc($font-size-h2 * 1.5); // 36px
+
+$font-size-subtitle: 16px;
+$line-height-subtitle: calc($font-size-subtitle * 1.5); // 24px
+
+// =======================
+// Border Radius
+// =======================
+
+$border-radius-lg: 30px;
+$border-radius-md: 16px;
+$border-radius-sm: 10px;

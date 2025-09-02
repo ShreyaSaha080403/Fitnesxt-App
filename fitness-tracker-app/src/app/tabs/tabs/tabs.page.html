@@ -1,0 +1,41 @@
+<ion-content>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom" class="custom-tab-bar">
+    <!-- Background SVG -->
+    <img src="assets/images/navBG.svg" class="tabbar-bg" />
+
+    <!-- Tab Buttons -->
+    <ion-tab-button tab="dashboard" (click)="setActiveTab('dashboard')">
+      <img [src]="activeTab === 'dashboard' ? 'assets/images/Homefilled.svg' : 'assets/icon/light/Home.svg'" class="tab-icon" />
+    </ion-tab-button>
+
+    <ion-tab-button tab="activity" class="left-of-search" (click)="setActiveTab('activity')">
+      <img [src]="activeTab === 'activity' ? 'assets/images/ActivityFilled.svg' : 'assets/icon/light/Activity.svg'" class="tab-icon" />
+    </ion-tab-button>
+
+    <!-- Floating Center Button -->
+    <button class="search-button" (click)="toggleSearchPopup()" >
+      <img src="assets/images/Navbar-Search.png" />
+    </button>
+
+
+    <ion-tab-button tab="camera" class="right-of-search"(click)="setActiveTab('camera')">
+      <img [src]="activeTab === 'camera' ? 'assets/images/CameraFilled.svg' : 'assets/icon/light/Camera.svg'" class="tab-icon" />
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile" (click)="setActiveTab('profile')">
+      <img [src]="activeTab === 'profile' ? 'assets/images/ProfileFilled.svg' : 'assets/icon/light/Profile.svg'" class="tab-icon" />
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+
+<div class="search-popup" *ngIf="showSearchPopup">
+    <div class="popup-option" *ngFor="let item of searchOptions" (click)="navigateTo(item.route)">
+      <div class="popup-box"></div>
+      <span>{{ item.label }}</span>
+    </div>
+  </div>
+
+</ion-content>
+<!--   assets/icon/light/Home.svg  assets/icon/light/Camera.svg  assets/icon/light/Profile.svg  -->

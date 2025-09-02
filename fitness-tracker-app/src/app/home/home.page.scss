@@ -1,0 +1,105 @@
+
+
+.welcome-text p {
+  font-size: 14px;
+  color: #9b9b9b;
+  margin:0;
+}
+
+.welcome-text h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+
+
+ion-content {
+  --background: #ffffff; 
+  z-index: 1; 
+}
+ion-toolbar {
+  --background: #fff;
+  --ion-color-base: #fff;
+  position: relative;
+  z-index: 10; /* Ensure nav bar stays above content but below search button */
+}
+
+ion-tabs {
+   overflow: visible !important;
+  contain: none !important;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+  background: transparent; /* Remove any background */}
+
+.tab-bar-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  overflow: visible !important;
+  pointer-events: none; /* Allows clicks to pass through */
+}
+
+ion-tab-bar {
+  --background: #ffffff;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  height: 60px;
+  overflow: visible !important;
+  contain: none !important;
+  padding-top: 0;
+  margin-top: -20px; 
+  pointer-events: auto; 
+}
+
+.center-button-container {
+  position: absolute;
+  left: 50%;
+  top: -35px; 
+  transform: translateX(-50%);
+  width: 70px;
+  height: 70px;
+  z-index: 1000;
+  pointer-events: auto; 
+}
+
+.tab-icon-center {
+
+  background: linear-gradient(90deg, #9DCEFF 0%, #92A3FD 100%);
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  //border: 3px solid white; 
+  
+  ion-icon {
+    color: #fff;
+    font-size: 28px;
+  }
+}
+
+
+ion-content {
+  --padding-bottom: 80px !important;
+}
+
+
+ion-tab-button {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+

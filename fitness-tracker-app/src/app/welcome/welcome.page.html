@@ -1,0 +1,21 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>welcome</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+  <div class="welcome-container">
+    <img src="assets/images/welc.png" alt="Welcome Illustration" class="illustration"/>
+    <div style="padding: 20px;">
+    <h2>Welcome, {{ userName }}</h2>
+    <p>You are all set now, let’s reach your goals together with us</p>
+    </div>
+    <ion-button expand="block" (click)="connectGoogleFit()">
+  Connect Google Fit
+</ion-button>
+    <ion-button expand="block" class="round-gradient-btn" (click)="goToHome()">
+      Go To Home
+    </ion-button>
+  </div>
+</ion-content>

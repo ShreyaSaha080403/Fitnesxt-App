@@ -1,0 +1,88 @@
+
+<ion-content [fullscreen]="true" class="page-background">
+  <div class="workout-top-section">
+    <!-- Top Navigation Icons -->
+    <div class="top-nav">
+      <img src="assets/images/Back-Navs.svg" class="icon-button" alt="Back" (click)="goback()">
+      <img src="assets/images/Detail-Navs.svg" class="icon-button" alt="Options">
+    </div>
+
+    <!-- Skipping Man Illustration -->
+    <div class="top-illustration">
+      <img src="assets/images/skipp.svg" alt="Skipping Man" />
+    </div>
+  </div>
+
+  <!-- Card begins here -->
+  <div class="sheet-like-container">
+    <div class="sheet-content">
+      <!-- More content continues here -->
+        <div class="workout-header">
+             <div class="text-info">
+           <h2>Fullbody Workout</h2>
+           <p>11 Exercises | 32mins | 320 Calories Burn</p>
+           </div>
+           <div class="favorite-icon">
+          <img src="assets/images/Love-Icon.svg" alt="Favorite" />
+         </div>
+        </div>
+
+        <!-- Info Cards -->
+       <div class="info-cards">
+        <div class="info-card blue-card" (click)="goNext()">
+         <img src="assets/images/Icon-Calendar.svg" alt="Calendar Icon" />
+           <span>Schedule Workout</span>
+            <span class="right-info">5/27, 09:00 AM</span>
+          <img src="assets/images/Icon-nextt.svg" alt="Next Icon" class="arrow-icon" />
+       </div>
+
+       <div class="info-card pink-card">
+            <img src="assets/images/Icon-Difficulity.svg" alt="Difficulty Icon" />
+            <span>Difficulty</span>
+         <span class="right-info">Beginner</span>
+          <img src="assets/images/Icon-nextt.svg" alt="Next Icon" class="arrow-icon" />
+        </div>
+       </div>
+       <div class="equipment-section">
+          <div class="section-header">
+           <h3>You’ll Need</h3>
+          <span class="item-count">5 Items</span>
+           </div>
+
+          <div class="equipment-list">
+         <div class="equipment-item">
+            <img src="assets/images/barbel.svg" alt="Barbell" />
+            <p>Barbell</p>
+            </div>
+            <div class="equipment-item">
+             <img src="assets/images/skipping-rope.svg" alt="Skipping Rope" />
+              <p>Skipping Rope</p>
+              </div>
+                  <!-- Add more items similarly -->
+                </div>
+       </div>
+        
+       <div class="exercises-section">
+  <div class="section-header">
+    <h3>Exercises</h3>
+    <span class="item-count">3 Sets</span>
+  </div>
+  <p class="set-label">Set 1</p>
+
+  <div class="exercise-list">
+    <div class="exercise-item" *ngFor="let exercise of exercises">
+      <img [src]="exercise.image" class="exercise-img" alt="{{ exercise.name }}">
+      <div class="exercise-info">
+        <p class="exercise-title">{{ exercise.name }}</p>
+        <p class="exercise-sub">{{ exercise.subtitle }}</p>
+      </div>
+      <img src="assets/images/circlenext.svg" class="exercise-arrow" alt="Next" />
+    </div>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+
+</ion-content>

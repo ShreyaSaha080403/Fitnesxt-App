@@ -1,0 +1,108 @@
+<ion-header class="activity-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <img src="assets/images/Back-Navs.svg" alt="Back" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="profile-title">Add Schedule</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <img src="assets/images/Detail-Navs.svg" alt="Options" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- Trigger Button -->
+<ion-item id="calendar-trigger" lines="none" button>
+  <ion-icon slot="start" src="assets/images/Icon-Calendar.svg"></ion-icon>
+  <ion-label>{{ selectedDate | date: 'EEE, dd MMM yyyy' }}</ion-label>
+</ion-item>
+
+<!-- Popover with Date Picker -->
+<ion-popover trigger="calendar-trigger" showBackdrop="true">
+  <ng-template>
+    <ion-datetime
+      presentation="date"
+      [value]="selectedDate"
+      (ionChange)="onDateChange($event)">
+    </ion-datetime>
+  </ng-template>
+</ion-popover>
+
+
+
+
+   <div class="time-picker-container">
+  <h2>Time</h2>
+  <div class="time-picker-scroll">
+    <div class="time-column">
+      <div *ngFor="let hour of hours" class="time-value">{{ hour }}</div>
+    </div>
+    <div class="time-column">
+      <div *ngFor="let minute of minutes" class="time-value">{{ minute }}</div>
+    </div>
+    <div class="time-column">
+      <div *ngFor="let meridian of meridians" class="time-value">{{ meridian }}</div>
+    </div>
+    <div class="picker-overlay-line"></div>
+  </div>
+   </div>
+
+   <div class="details-section">
+  <h2>Details Workout</h2>
+
+  <div class="detail-card">
+    <div class="icon">
+      <!-- Replace with your SVG -->
+      <img src="assets/images/Icon-Barbel.svg" alt="Workout" />
+    </div>
+    <div class="label">Choose Workout</div>
+    <div class="value">Upperbody Workout</div>
+    <div class="arrow">
+      <!-- Replace with your right arrow SVG -->
+      <img src="assets/images/Icon-nextt.svg" alt=">" />
+    </div>
+  </div>
+
+  <div class="detail-card">
+    <div class="icon">
+      <img src="assets/images/Icon-Swap.svg" alt="Difficulty" />
+    </div>
+    <div class="label">Difficulty</div>
+    <div class="value">Beginner</div>
+    <div class="arrow">
+      <img src="assets/images/Icon-nextt.svg" alt=">" />
+    </div>
+  </div>
+
+  <div class="detail-card">
+    <div class="icon">
+      <img src="assets/images/Icon-Repetitions.svg" alt="Repetitions" />
+    </div>
+    <div class="label">Custom Repetitions</div>
+    <div class="arrow">
+      <img src="assets/images/Icon-nextt.svg" alt=">" />
+    </div>
+  </div>
+
+  <div class="detail-card">
+    <div class="icon">
+      <img src="assets/images/Icon-Repetitions.svg" alt="Weights" />
+    </div>
+    <div class="label">Custom Weights</div>
+    <div class="arrow">
+      <img src="assets/images/Icon-nextt.svg" alt=">" />
+    </div>
+  </div>
+   </div>
+
+    <div class="bottom-button">
+    <ion-button expand="block"  class="round-gradient-btn" >Save</ion-button>
+    </div>
+</ion-content>

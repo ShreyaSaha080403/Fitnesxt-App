@@ -1,0 +1,51 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-row class="ion-justify-content-between ion-align-items-center ion-padding-horizontal">
+      <ion-col size="9">
+        <div class="welcome-text" style="margin-top: 20px;">
+          <p>Welcome Back,</p>
+          <h2>{{ username }}</h2>
+        </div>
+      </ion-col>
+      <ion-col size="3" class="ion-text-right">
+        <ion-button fill="clear" (click)="goToNotifications()">
+          <img src="/assets/icon/Fitnest - Fitness App UI Kit by Pixel True/NotificationIcon.png" alt="notifications" />
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Empty content for now -->
+</ion-content>
+
+<ion-tabs>
+  <div class="tab-bar-container">
+    <ion-tab-bar slot="bottom">
+      <!-- Your existing tab buttons -->
+      <ion-tab-button tab="home">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="stats">
+        <ion-icon name="bar-chart-outline"></ion-icon>
+      </ion-tab-button>
+      
+      <!-- Special container for the center button -->
+      <div class="center-button-container">
+        <ion-tab-button tab="search">
+          <div class="tab-icon-center">
+            <ion-icon name="search-outline"></ion-icon>
+          </div>
+        </ion-tab-button>
+      </div>
+      
+      <ion-tab-button tab="camera">
+        <ion-icon name="camera-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="profile">
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </div>
+</ion-tabs>

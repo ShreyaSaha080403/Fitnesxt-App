@@ -1,0 +1,151 @@
+
+
+ <ion-header class="dash" >
+    <ion-row  class="ion-align-items-center ">
+      <ion-col size="9" >
+        <div class="welcome-text" >
+          <p>Welcome Back,</p>
+          <h2>Shreya</h2>
+        </div>
+      </ion-col>
+      <ion-col size="3" class="ion-text-right">
+        <ion-button fill="clear" (click)="goToNotifications()">
+          <img src="/assets/icon/light/Notification.svg" alt="notifications" />
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-header>
+
+
+
+<ion-content [fullscreen]="true"  class="food-scroll-container">
+ 
+<ion-card class="bmi-card">
+  <div class="bmi-content">
+    <h2 class="bmi-title">BMI (Body Mass Index)</h2>
+    <p class="bmi-subtext">You have normal weight</p>
+    <ion-button class="view-more-btn" size="small" shape="round">View More</ion-button>
+  </div>
+  <img src="assets/images/Banner-Pie.svg" class="bmi-piechart" />
+</ion-card>
+
+<div class="target-card">
+  <div class="target-content">
+    <h2 class="target-title">Today Target</h2>
+  </div>
+  <button class="check-btn">Check</button>
+</div>
+
+<div class="latest-activity">
+   <div class="title">Activity Status</div>
+</div>
+
+<ion-card class="heart-rate-card">
+  <ion-card-content>
+    <div class="heart-rate-header">
+      <div class="title">Heart Rate</div>
+      <div class="subtitle">{{heartrate}} <span class="unit">BPM</span></div>
+    </div>
+
+    <div class="chart-wrapper">
+      <canvas id="lineChart"></canvas>
+      <div class="tooltip-label">3mins ago</div>
+    </div>
+  </ion-card-content>
+</ion-card>
+
+<div class="dashboard-container">
+    
+    <!-- Left Tall Card -->
+    <ion-card class="left-card water-intake-card">
+       <div class="intake-bar">
+      <div class="filled" [ngStyle]="{ height: waterIntakePercentage + '%' }"></div>
+    </div>
+
+    <div class="intake-content">
+      <h2>Water Intake</h2>
+      <h3>4 Liters</h3>
+
+      <p class="updates-title">Real time updates</p>
+
+      <div class="intake-log" *ngFor="let entry of intakeData; let last = last">
+        <div class="dot-line">
+          <div class="dot" [class.active]="last"></div>
+          <div class="line" *ngIf="!last"></div>
+        </div>
+
+        <div class="entry">
+          <span class="time">{{ entry.time }}</span>
+          <span class="amount">{{ entry.amount }}</span>
+        </div>
+      </div>
+    </div>
+    </ion-card>
+
+    <!-- Right Two Square Cards -->
+    <div class="right-column">
+
+      <ion-card class="right-card">
+        <div class="sleep-header">
+    <h2>Sleep</h2>
+    <p >{{sleepHours}}<span class="hours" >h</span> 17<span class="minutes">m</span></p>
+  </div>
+  <div class="sleep-wave">
+    <img src="assets/images/Sleep-Graphlines.svg" alt="Sleep waves" />
+  </div>
+      </ion-card>
+
+      <ion-card class="right-card steps-card">
+         <div class="card-content">
+    <h3 class="card-title">Steps</h3>
+    <div class="steps-count">{{ currentSteps }} steps</div>
+
+    <div class="circular-progress-wrapper">
+      <svg class="progress-ring" width="120" height="120">
+        <circle class="background-ring" cx="60" cy="60" r="50" />
+        <circle
+          class="progress-ring-circle"
+          [attr.stroke-dasharray]="circumference"
+          [attr.stroke-dashoffset]="circumference - (currentSteps / totalSteps) * circumference"
+          cx="60" cy="60" r="50"
+        />
+        <defs>
+           <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+             <stop offset="0%" stop-color="#a988f0" />
+             <stop offset="100%" stop-color="#9bb7ff" />
+           </linearGradient>
+        </defs>
+
+      </svg>
+
+      <div class="inner-circle">
+        <span class="steps-left">{{ totalSteps - currentSteps }}</span>
+        <span class="text">left</span>
+      </div>
+    </div>
+  </div>
+      </ion-card>
+
+    </div>
+  </div>
+  <div class="meal-nutritions-header" style="padding-bottom: 10px;">
+  <div class="title">Workout Progress</div>
+  <ion-select interface="popover" placeholder="Weekly" value="weekly">
+    <ion-select-option value="daily">Daily</ion-select-option>
+    <ion-select-option value="weekly">Weekly</ion-select-option>
+  </ion-select>
+</div>
+
+<div class="weekly-progress-card" style="padding-bottom: 150px;">
+  <ion-card-content>
+    <div class="weekly-chart-wrapper">
+      <canvas id="weeklyChart"></canvas>
+    </div>
+  </ion-card-content>
+</div>
+
+
+
+
+</ion-content>
+<!-- assets/images/Banner-Pie.svg -->

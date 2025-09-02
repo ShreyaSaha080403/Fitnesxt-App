@@ -1,0 +1,66 @@
+<ion-header class="activity-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear">
+        <img src="assets/images/Back-Navs.svg" alt="Back" (click)="goBack()"class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="profile-title">Activity Tracker</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <img src="assets/images/Detail-Navs.svg" alt="Options" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- assets/images/glass 1.svg  assets/images/boots.svg assets/images/ButtonAdd.svg  -->
+<ion-content [fullscreen]="true">
+
+  <ion-card class="today-target-card">
+  <div class="card-header">
+    <div class="title">Today Target</div>
+    <img src="assets/images/ButtonAdd.svg" alt="Add" />
+  </div>
+
+  <div class="target-grid">
+    <div class="target-item">
+      <img src="assets/images/glass 1.svg" alt="Water" />
+      <div class="info">
+        <div class="value gradient-text">8L</div>
+        <div class="label">Water Intake</div>
+      </div>
+    </div>
+
+    <div class="target-item">
+      <img src="assets/images/boots.svg" alt="Steps" />
+      <div class="info">
+        <div class="value gradient-text">2400</div>
+        <div class="label">Foot Steps</div>
+      </div>
+    </div>
+  </div>
+</ion-card>
+
+<div class="activity-progress-header">
+  <div class="title">Activity Progress</div>
+  <ion-select interface="popover" placeholder="Weekly" value="weekly">
+    <ion-select-option value="daily">Daily</ion-select-option>
+    <ion-select-option value="weekly">Weekly</ion-select-option>
+  </ion-select>
+</div>
+
+<ion-card class="progress-graph-card">
+  <ion-card-content>
+    <canvas id="barChart"></canvas>
+  </ion-card-content>
+</ion-card>
+
+<div class="latest-activity">
+   <div class="title">Latest Activity</div>
+   <div class="side">See more</div>
+</div>
+
+</ion-content>

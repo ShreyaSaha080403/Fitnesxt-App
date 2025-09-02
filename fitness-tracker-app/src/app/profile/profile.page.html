@@ -1,0 +1,126 @@
+<ion-header class="profile-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear">
+        <img src="assets/images/Back-Navs.svg" alt="Back" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="profile-title">Profile</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <img src="assets/images/Detail-Navs.svg" alt="Options" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+
+
+
+
+<ion-content [fullscreen]="true" class="content">
+  <div class="profile-top">
+    <img src="assets/images/Latest-Ppf.svg" alt="Avatar" class="profile-avatar" />
+    <div class="profile-info">
+      <h2>{{name}}</h2>
+      <p>Lose a Fat Program</p>
+    </div>
+    <ion-button class="edit-btn" shape="round" size="small">Edit</ion-button>
+  </div> 
+
+  <div class="profile-stats">
+  <ion-card class="stat-card">
+    <div class="stat-value">{{ height }}cm</div>
+    <div class="stat-label">Height</div>
+  </ion-card>
+
+  <ion-card class="stat-card">
+    <div class="stat-value">{{ weight }}kg</div>
+    <div class="stat-label">Weight</div>
+  </ion-card>
+
+  <ion-card class="stat-card">
+    <div class="stat-value">{{ age }}yr</div>
+    <div class="stat-label">Age</div>
+  </ion-card>
+  </div>
+
+
+
+  
+
+
+
+  <ion-card class="account-card">
+
+  <ion-card-header>
+    <ion-card-title>Account</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <div class="account-option" *ngFor="let item of accountItems">
+      <div class="option-left">
+        <img [src]="item.icon" alt="{{ item.label }}" />
+        <span>{{ item.label }}</span>
+      </div>
+      <img src="assets/images/Icon-ArrowNEXT.svg" alt="next" />
+    </div>
+  </ion-card-content>
+</ion-card>
+
+
+
+<ion-card class="notification-card">
+  <ion-card-header>
+    <ion-card-title>Notifications</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <div class="notification-item">
+      <div class="notification-left">
+        <img src="assets/images/Icon-Notif.svg" alt="notification" />
+        <span>Pop-up Notification</span>
+      </div>
+      <ion-toggle [(ngModel)]="popupNotification"></ion-toggle>
+    </div>
+  </ion-card-content>
+</ion-card>
+
+<ion-card class="account-card">
+  <ion-card-header>
+    <ion-card-title>Other</ion-card-title>
+  </ion-card-header>
+  <ion-card-content style="padding-bottom: 25px">
+    <div class="account-option">
+      <div class="option-left">
+        <img src="assets/images/Icon-Message.svg" alt="contact us" />
+        <span>Contact Us</span>
+      </div>
+      <img src="assets/images/Icon-ArrowNEXT.svg" alt="next arrow" />
+    </div>
+
+    <div class="account-option">
+      <div class="option-left">
+        <img src="assets/images/Icon-Privacy.svg" alt="privacy policy" />
+        <span>Privacy Policy</span>
+      </div>
+      <img src="assets/images/Icon-ArrowNEXT.svg" alt="next arrow" />
+    </div>
+
+    <div class="account-option">
+      <div class="option-left">
+        <img src="assets/images/Icon-Setting.svg" alt="settings" />
+        <span>Settings</span>
+      </div>
+      <img src="assets/images/Icon-ArrowNEXT.svg" alt="next arrow" />
+    </div>
+  </ion-card-content>
+</ion-card>
+  <div class="bottom-button" style="padding-bottom: 70px;">
+    <ion-button expand="block" (click)="logout()" class="round-gradient-btn">Logout</ion-button>
+  </div>
+
+</ion-content>

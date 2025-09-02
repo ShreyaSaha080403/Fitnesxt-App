@@ -1,0 +1,61 @@
+<ion-header class="activity-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <img src="assets/images/Back-Navs.svg" alt="Back" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="profile-title">Workout Schedule</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <img src="assets/images/Detail-Navs.svg" alt="Options" class="icon-btn" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <div class="schedule-wrapper">
+  <!-- Date Selector -->
+  <div class="date-selector">
+    <ion-icon name="chevron-back-outline" (click)="goToPreviousMonth()"></ion-icon>
+    <span class="month">{{ selectedDate | date: 'MMMM yyyy' }}</span>
+    <ion-icon name="chevron-forward-outline" (click)="goToNextMonth()"></ion-icon>
+  </div>
+
+  <div class="day-row">
+   <div 
+    class="day" 
+    *ngFor="let day of days" 
+    [class.active]="day.isActive"
+  >
+    {{ day.label }}<br><span>{{ day.date }}</span>
+  </div>
+  </div>
+
+  <!-- Schedule Timeline -->
+  <div class="timeline">
+    <div class="hour-slot" *ngFor="let slot of timeline" [class.current-time]="slot.isCurrent">
+    {{ slot.time }}
+    <div 
+      class="event" 
+      *ngIf="slot.workout" 
+      [ngClass]="slot.workout.color"
+    >
+      {{ slot.workout.name }}, {{ slot.workout.time }}
+    </div>
+  </div>
+  </div>
+
+  <!-- Floating Add Button -->
+  <button class="floating-add" (click)="goNext()">
+    <img src="assets/images/AddddBold.svg" alt="Add" />
+  </button>
+</div>
+
+ 
+</ion-content>

@@ -1,0 +1,103 @@
+ion-tab-bar.custom-tab-bar {
+  position: fixed;
+  --overflow: visible;
+  bottom: 0;
+  width: 100%;
+  overflow: visible; 
+  z-index: 10;
+  // height: calc(90px + env(safe-area-inset-bottom));
+  //padding-bottom: env(safe-area-inset-bottom);
+  height: 110px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  ion-tab-bar::before {
+  display: none !important;
+}
+
+
+  .tabbar-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    object-fit: cover;
+  }
+  ion-tab-button {
+    background: transparent;
+    z-index: 2;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+    .tab-icon {
+      width: 26px;
+      height: 26px;
+      //filter: brightness(0) saturate(100%) invert(80%) sepia(2%) saturate(200%) hue-rotate(290deg) brightness(90%) contrast(85%);
+      
+    }
+    .tab-icon[src*="light"] {
+    filter: brightness(0) saturate(100%) invert(80%) sepia(2%) saturate(200%) hue-rotate(290deg) brightness(90%) contrast(85%);
+  }
+
+  &.left-of-search {
+    margin-right: 30px; // adds space between activity and search
+  }
+
+  &.right-of-search {
+    margin-left: 30px; // adds space between search and camera
+  }
+    
+  }  
+
+ 
+}
+.search-button {
+  position: absolute;
+  top: -11px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 1px;
+  z-index: 8;
+  pointer-events: auto; 
+}
+
+
+.search-popup {
+  position: fixed;
+  bottom: 110px; // Above the tab bar + button
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  width: 260px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.popup-option {
+  display: flex;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #1D1617;
+
+  .popup-box {
+    width: 24px;
+    height: 24px;
+    background-color: #ddd;
+    border-radius: 6px;
+    margin-right: 10px;
+  }
+}
+
+ion-tab-bar {
+  --ion-safe-area-bottom: 0px;
+}

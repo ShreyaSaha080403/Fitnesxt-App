@@ -1,0 +1,35 @@
+<ion-header class="notification-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goDash()">
+        <ion-icon src="assets/images/Back-Navs.svg" class="icon-btn" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="profile-title">Notification</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon src="assets/images/Detail-Navs.svg" class="icon-btn"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="notification-content">
+
+  <div class="notification-list">
+    <div class="notification-item" *ngFor="let notif of notifications">
+      <div class="left">
+        <img [src]="notif.icon" alt="icon" />
+      </div>
+      <div class="center">
+        <div class="title">{{ notif.title }}</div>
+        <div class="time">{{ notif.time }}</div>
+      </div>
+      <div class="right">
+        <ion-icon src="assets/icon/dots-vertical.svg"></ion-icon>
+      </div>
+    </div>
+  </div>
+
+</ion-content>
